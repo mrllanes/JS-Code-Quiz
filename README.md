@@ -17,3 +17,8 @@ How well do you know JavaScript? Well lets find out. This JS Code Quiz is design
 - Let your knowledge show!
 
 ## Screenshots
+
+![Code Quiz Img 1](./Assets/Images/)
+![Code Quiz Img 2](./Assets/Images/)
+![Code Quiz Img 3](./Assets/Images/)
+![Code Quiz Img 4](./Assets/Images/)
