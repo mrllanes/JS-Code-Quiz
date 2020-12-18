@@ -10,6 +10,7 @@
 <body>
 
     <div class="container">
+        <!--Initial/Top row containing JumboTron and logos in columns-->
         <div class="row">
             <div class="col">
                 <img src="./Assets/Images/javascript-logo.png" class="rounded float-left" height="150rem" alt="javascript logo">
@@ -17,47 +18,69 @@
             <div class="col-7">
                 <div class="jumbotron">
                     <h1 class="display-4" class="d-flex justify-content-center">Welcome to the JavaScript Code Quiz!</h1>
-                    <p class="lead">Test your JavaScript knowledge. You have 15 minutes and will loose time as you answer incorrectly. Good Luck!</p>
+                    <p class="lead">Test your Expert JavaScript knowledge. You have 4 minutes and will loose time as you answer incorrectly. Good Luck!</p>
                     <hr class="my-4">
+
+                    <!--Timer code below-->
                     <div class="container">
                         <div class="timer">
                             <div id="hand">
                                 <div class="time">
-                                    <div id="minutes">15</div>
+                                    <div id="minutes">4</div>
                                     <div id="seconds">00</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                                <a class="btn btn-primary btn-lg" id="start">Start Quiz</a>
+                                <!--Start button-->
+                                <a class="btn btn-primary btn-lg" role="button" id="start">Start Quiz</a>
                 </div>
             </div>
             <div class="col">
                 <img src="./Assets/Images/javascript-logo.png" class="rounded float-right" height="150rem" alt="javascript logo">
             </div>
         </div>
+
+        <!--This row is for the Questions-->
         <div class="row">
             <div class="col">
-                <h2 id="question" class="text-center">Questions will go here, centered somehow</h2>
+                <div class="w-auto p-3" style="height: 150px; background-color:yellow;">
+                    <h2 id="question" class="text-center">Questions will go here, centered somehow</h2>
+                </div>
             </div>
         </div>
+
+        <!--This row is more of a spacer and is left blank on purpose or for future use if necessary-->
+        <div class="row">
+            <div style="height: 50px; background-color: white;"></div>
+        </div>
+
+        <!--This row contains four columns to house the buttons for the answers-->
         <div class="row">
             <div class="col">
-                <div class="btn btn1">1st answer text</div>
+                <button type="button" class="btn btn-secondary btn-lg">
+                    <div id="btn1">1st answer as a button</div>
+                </button>
             </div>
             <div class="col">
-                <div class="btn btn1">2nd answer as a button</div>
+                <button type="button" class="btn btn-secondary btn-lg">
+                    <div id="btn2">2nd answer as a button</div>
+                </button>
             </div>
             <div class="col">
-                <div class="btn btn1">3rd answer as a button</div>
+                <button type="button" class="btn btn-secondary btn-lg">
+                    <div id="btn3">3rd answer as a button</div>
+                </button>
             </div>
             <div class="col">
-                <div class="btn btn1">4th answer as a button</div>
+                <button type="button" class="btn btn-secondary btn-lg">
+                    <div id="btn4">4th answer as a button</div>
+                </button>
             </div>
         </div>
     </div>
 
-
+    <!--Script sources below, Bootstrap and local JS file-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="./Assets/script.js"></script>

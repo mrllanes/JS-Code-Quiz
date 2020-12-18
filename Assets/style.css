@@ -1,7 +1,3 @@
-
-
-
-
 /* .timer {
     height: 300px;
     width: 300px;
@@ -11,26 +7,24 @@
     position: relative;
   } */
 
-
 .time {
-    width: 100%;
-    text-align: center;
-  }
-  
-  /* .time::after {
+  width: 100%;
+  text-align: center;
+}
+
+/* .time::after {
     content: " ";
     display: block;
     clear: both;
-  } */
-  
+} */
 
-  #minutes {
-    font-size: 3rem;
-    float: left;
-    margin-left: 25%;
-  }
-  
-  #seconds {
-    font-size: 2rem;
-    float: left;
-  
+#minutes {
+  font-size: 3rem;
+  float: left;
+  margin-left: 25%;
+}
+
+#seconds {
+  font-size: 2rem;
+  float: left;
+}
