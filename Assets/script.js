@@ -3,11 +3,13 @@
 var startQuiz = document.querySelector("#start");
 var minutesDisplay = document.querySelector("#minutes");
 var secondsDisplay = document.querySelector("#seconds");
-var option0 = document.getElementById("btn0");
+var currentQuestion = document.querySelector("#question");
+var option0 = document.querySelector("#btn0");
 var option1 = document.querySelector("#btn1");
 var option2 = document.querySelector("#btn2");
 var option3 = document.querySelector("#btn3");
 var questionCount = 0;
+var score = 0;
 
 var totalSeconds = 0;
 var secondsElapsed = 0;
@@ -94,6 +96,7 @@ console.log(questionsAnswers[0].options[0]);
 
 // Code for the timer below
 function startTimer() {
+    questionCount = 0;
     /*
     if (totalSeconds === 0) {
         getTotalSeconds();
@@ -110,20 +113,46 @@ function startTimer() {
 
     }, 1000);
 */
+    startQuiz.hidden = true;
+
     nextQuestion();
 }
 
+// Populates Questions and answers with current/next objects
 function nextQuestion(){
-    console.log("You are here");
-
-    option0.textContent = questionsAnswers[0].options[0];
-    option1.textContent = questionsAnswers[0].options[1];
-    option2.textContent = questionsAnswers[0].options[2];
-    option3.textContent = questionsAnswers[0].options[3];
+        console.log("You are here");
+        currentQuestion.textContent = questionsAnswers[questionCount].question;
+        option0.textContent = questionsAnswers[questionCount].options[0];
+        option1.textContent = questionsAnswers[questionCount].options[1];
+        option2.textContent = questionsAnswers[questionCount].options[2];
+        option3.textContent = questionsAnswers[questionCount].options[3];
 }
 
 function processAnswer(num1) {
-console.log(num1);
+    // console.log(questionCount);
+        if (questionsAnswers[questionCount].options[num1] == questionsAnswers[questionCount].correctAnswer) {
+            console.log("correct");
+            score++;
+        }
+        else {
+            console.log("WRONG!!!");
+        }
+        questionCount++;
+        if (questionCount <= 14) {
+            nextQuestion();
+        } else processScore();
+}
+
+
+
+function processScore() {
+    console.log((score / 15) * 100);
+    option0.hidden = true;
+    option1.hidden = true;
+    option2.hidden = true;
+    option3.hidden = true;
+    startQuiz.hidden = false;
+    currentQuestion.textContent = "You answered " + score + " questions correctly. Your Grade is a: " + Math.round((score / 15) * 100);
 }
 
 function formatTime(time) {
@@ -146,6 +175,7 @@ function updateTimer () {
 
 
 startQuiz.addEventListener("click", startTimer);
+
 option0.addEventListener("click", function(){processAnswer(0);});
 option1.addEventListener("click", function(){processAnswer(1);});
 option2.addEventListener("click", function(){processAnswer(2);});
