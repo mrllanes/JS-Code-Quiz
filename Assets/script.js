@@ -15,10 +15,11 @@ var totalSeconds = 0;
 var secondsElapsed = 0;
 var interval;
 
+// Array of Objects holding all Questions, options for answers and correct answers
 var questionsAnswers = [
     {
         question: "What is JavaScript?",
-        options: ["Coffee Instructions", "Programming Language", "Dilithium Factoring", "Cursive"],
+        options: ["Coffee Instructions", "Programming Language", "Dilithium Factoring", "Form of Cursive"],
         correctAnswer: "Programming Language"
 },
 {
@@ -97,7 +98,6 @@ console.log(questionsAnswers[0].options[0]);
 // Code for the timer below
 function startTimer() {
     questionCount = 0;
-    /*
     if (totalSeconds === 0) {
         getTotalSeconds();
     }
@@ -112,11 +112,11 @@ function startTimer() {
         updateTimer();
 
     }, 1000);
-*/
+
     startQuiz.hidden = true;
 
     nextQuestion();
-}
+} //timer function ends
 
 // Populates Questions and answers with current/next objects
 function nextQuestion(){
@@ -128,6 +128,7 @@ function nextQuestion(){
         option3.textContent = questionsAnswers[questionCount].options[3];
 }
 
+// This function will process whatever answer the user selects, comparing it to the actual answer, increasing the score if correct and incrementing the question number
 function processAnswer(num1) {
     // console.log(questionCount);
         if (questionsAnswers[questionCount].options[num1] == questionsAnswers[questionCount].correctAnswer) {
@@ -143,8 +144,7 @@ function processAnswer(num1) {
         } else processScore();
 }
 
-
-
+// Here the final score is calculated, Answer buttons are hidden, start button visible and score prompt.
 function processScore() {
     console.log((score / 15) * 100);
     option0.hidden = true;
@@ -161,7 +161,6 @@ function formatTime(time) {
 
 function getTotalSeconds (){
     totalSeconds = parseInt(minutesDisplay.value) * 60;
-
 }
 
 function updateTimer () {
@@ -171,11 +170,8 @@ function updateTimer () {
     secondsDisplay.textContent = formatTime(seconds);
 }
 
-
-
-
+// Event listeners for all button from the HTML file
 startQuiz.addEventListener("click", startTimer);
-
 option0.addEventListener("click", function(){processAnswer(0);});
 option1.addEventListener("click", function(){processAnswer(1);});
 option2.addEventListener("click", function(){processAnswer(2);});
