@@ -8,7 +8,7 @@ How well do you know JavaScript? Well lets find out. This JS Code Quiz is design
 
 ## Instructions
 
-- This is a timed quiz. You will be given 5 minutes to answer 15 questions. The timer will count down in the top right corner.
+- This is a timed quiz. You will be given 4 minutes to answer 15 questions. The timer will count down in the top right corner.
 - You will be presented with a series of questions, some easy and some hard, all having to do with JavaScript in some way, shape or form.
 - If you answer the question CORRECTLY, you will simply move on to the next question.
 - If you answer the question INCORRECTLY, then you will be informed and loose 10 seconds from the timer and then move on to the next question.
@@ -18,7 +18,7 @@ How well do you know JavaScript? Well lets find out. This JS Code Quiz is design
 
 ## Screenshots
 
-![Code Quiz Img 1](./Assets/Images/)
-![Code Quiz Img 2](./Assets/Images/)
-![Code Quiz Img 3](./Assets/Images/)
-![Code Quiz Img 4](./Assets/Images/)
+![Code-Quiz-Img-1](./Assets/Images/)
+![Code-Quiz-Img-2](./Assets/Images/)
+![Code-Quiz-Img-3](./Assets/Images/)
+![Code-Quiz-Img-4](./Assets/Images/)

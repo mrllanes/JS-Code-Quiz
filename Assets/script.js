@@ -8,10 +8,14 @@ var option0 = document.querySelector("#btn0");
 var option1 = document.querySelector("#btn1");
 var option2 = document.querySelector("#btn2");
 var option3 = document.querySelector("#btn3");
+var initials = document.querySelector("#userInitials");
+var saveBtn = document.querySelector("#saveBtn");
+var trackingScore = document.querySelector(".userInput");
+trackingScore.hidden = true;
 var questionCount = 0;
 var score = 0;
 
-var totalSeconds = 0;
+var totalSeconds = 60;
 var secondsElapsed = 0;
 var interval;
 
@@ -98,20 +102,17 @@ console.log(questionsAnswers[0].options[0]);
 // Code for the timer below
 function startTimer() {
     questionCount = 0;
-    if (totalSeconds === 0) {
-        getTotalSeconds();
-    }
-    clearInterval(interval);
-    interval = setInterval(function () {
-        totalSeconds -= 1;
-        if (totalSeconds <= 0) {
-        alert("Time is up!");
+    var interval = setInterval(function () {
+        totalSeconds--;
+    if (totalSeconds <= 0) {
         clearInterval(interval);
-        }
+        processScore();
+    }
 
-        updateTimer();
+    updateTimer();
 
     }, 1000);
+
 
     startQuiz.hidden = true;
 
@@ -137,6 +138,7 @@ function processAnswer(num1) {
         }
         else {
             console.log("WRONG!!!");
+            totalSeconds -= 10;
         }
         questionCount++;
         if (questionCount <= 14) {
@@ -152,7 +154,10 @@ function processScore() {
     option2.hidden = true;
     option3.hidden = true;
     startQuiz.hidden = false;
-    currentQuestion.textContent = "You answered " + score + " questions correctly. Your Grade is a: " + Math.round((score / 15) * 100);
+    minutes.hidden = true;
+    seconds.hidden = true;
+    trackingScore.hidden = false;
+    currentQuestion.innerHTML = "You answered " + score + " questions correctly. Your Grade is a: " + Math.round((score / 15) * 100) + "<br>" + "Please enter your name below";
 }
 
 function formatTime(time) {
@@ -161,6 +166,7 @@ function formatTime(time) {
 
 function getTotalSeconds (){
     totalSeconds = parseInt(minutesDisplay.value) * 60;
+    console.log(totalSeconds);
 }
 
 function updateTimer () {
@@ -176,3 +182,9 @@ option0.addEventListener("click", function(){processAnswer(0);});
 option1.addEventListener("click", function(){processAnswer(1);});
 option2.addEventListener("click", function(){processAnswer(2);});
 option3.addEventListener("click", function(){processAnswer(3);});
+saveBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    var user = initials.value;
+    console.log(user, score);
+})
+
