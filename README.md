@@ -18,7 +18,7 @@ How well do you know JavaScript? Well lets find out. This JS Code Quiz is design
 
 ## Screenshots
 
-![Code-Quiz-Img-1.JPG](./Assets/Images/)
-![Code-Quiz-Img-2.JPG](./Assets/Images/)
-![Code-Quiz-Img-3.JPG](./Assets/Images/)
-![Code-Quiz-Img-4.JPG](./Assets/Images/)
+![Code-Quiz-Img-1.JPG](./Assets/Images/Code-Quiz-Img-1.JPG)
+![Code-Quiz-Img-2.JPG](./Assets/Images/Code-Quiz-Img-2.JPG)
+![Code-Quiz-Img-3.JPG](./Assets/Images/Code-Quiz-Img-3.JPG)
+![Code-Quiz-Img-4.JPG](./Assets/Images/Code-Quiz-Img-4.JPG)
