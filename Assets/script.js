@@ -13,6 +13,7 @@ var saveBtn = document.querySelector("#saveBtn");
 var trackingScore = document.querySelector(".userInput");
 trackingScore.hidden = true;
 var questionCount = 0;
+var highScores = JSON.parse(localStorage.getItem("highscores")) || [];
 var score = 0;
 
 var totalSeconds = 60;
@@ -176,6 +177,15 @@ function updateTimer () {
     secondsDisplay.textContent = formatTime(seconds);
 }
 
+function saveUserScore(user) {
+    var newScores = {
+        name: user,
+        score: score
+    }
+    highScores.push(newScores);
+    localStorage.setItem("highscores", JSON.stringify(highScores));
+}
+
 // Event listeners for all button from the HTML file
 startQuiz.addEventListener("click", startTimer);
 option0.addEventListener("click", function(){processAnswer(0);});
@@ -186,5 +196,6 @@ saveBtn.addEventListener("click", function(event) {
     event.preventDefault();
     var user = initials.value;
     console.log(user, score);
+    saveUserScore(user);
 })
 
