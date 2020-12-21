@@ -1,22 +1,7 @@
-/* .timer {
-    height: 300px;
-    width: 300px;
-    margin: 0 auto;
-    background-color: tomato;
-    border-radius: 50%;
-    position: relative;
-  } */
-
 .time {
   width: 100%;
   text-align: center;
 }
-
-/* .time::after {
-    content: " ";
-    display: block;
-    clear: both;
-} */
 
 #minutes {
   font-size: 3rem;
