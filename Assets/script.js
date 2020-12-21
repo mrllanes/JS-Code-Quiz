@@ -15,8 +15,8 @@ trackingScore.hidden = true;
 var questionCount = 0;
 var highScores = JSON.parse(localStorage.getItem("highscores")) || [];
 var score = 0;
-
-var totalSeconds = 60;
+//Current time set manually here as a variable
+var totalSeconds = 180;
 var secondsElapsed = 0;
 var interval;
 
