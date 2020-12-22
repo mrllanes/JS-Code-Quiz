@@ -10,6 +10,8 @@ var option2 = document.querySelector("#btn2");
 var option3 = document.querySelector("#btn3");
 var initials = document.querySelector("#userInitials");
 var saveBtn = document.querySelector("#saveBtn");
+var resetBtn = document.querySelector("#reset");
+resetBtn.hidden = true;
 var trackingScore = document.querySelector(".userInput");
 trackingScore.hidden = true;
 var questionCount = 0;
@@ -154,10 +156,11 @@ function processScore() {
     option1.hidden = true;
     option2.hidden = true;
     option3.hidden = true;
-    startQuiz.hidden = false;
+    // startQuiz.hidden = false;
     minutes.hidden = true;
     seconds.hidden = true;
     trackingScore.hidden = false;
+    resetBtn.hidden = false;
     currentQuestion.innerHTML = "You answered " + score + " questions correctly. Your Grade is a: " + Math.round((score / 15) * 100) + "<br>" + "Please enter your name below";
 }
 
@@ -186,6 +189,10 @@ function saveUserScore(user) {
     localStorage.setItem("highscores", JSON.stringify(highScores));
 }
 
+function refreshPage () {
+    window.location.reload();
+}
+
 // Event listeners for all button from the HTML file
 startQuiz.addEventListener("click", startTimer);
 option0.addEventListener("click", function(){processAnswer(0);});
@@ -198,4 +205,4 @@ saveBtn.addEventListener("click", function(event) {
     console.log(user, score);
     saveUserScore(user);
 })
-
+resetBtn.addEventListener("click", refreshPage);
