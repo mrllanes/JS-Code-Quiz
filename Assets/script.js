@@ -5,9 +5,13 @@ var minutesDisplay = document.querySelector("#minutes");
 var secondsDisplay = document.querySelector("#seconds");
 var currentQuestion = document.querySelector("#question");
 var option0 = document.querySelector("#btn0");
+option0.hidden = true;
 var option1 = document.querySelector("#btn1");
+option1.hidden = true;
 var option2 = document.querySelector("#btn2");
+option2.hidden = true;
 var option3 = document.querySelector("#btn3");
+option3.hidden = true;
 var initials = document.querySelector("#userInitials");
 var saveBtn = document.querySelector("#saveBtn");
 var resetBtn = document.querySelector("#reset");
@@ -104,6 +108,10 @@ console.log(questionsAnswers[0].options[0]);
 
 // Code for the timer below
 function startTimer() {
+    option0.hidden = false;
+    option1.hidden = false;
+    option2.hidden = false;
+    option3.hidden = false;
     questionCount = 0;
     var interval = setInterval(function () {
         totalSeconds--;
@@ -164,6 +172,7 @@ function processScore() {
     currentQuestion.innerHTML = "You answered " + score + " questions correctly. Your Grade is a: " + Math.round((score / 15) * 100) + "<br>" + "Please enter your name below";
 }
 
+// Functions and formatting for the timer below
 function formatTime(time) {
     return (time >= 10) ? time : `0${time}`;
 }
@@ -180,6 +189,7 @@ function updateTimer () {
     secondsDisplay.textContent = formatTime(seconds);
 }
 
+//Code for entering and storing user info and scores, writing to memory only
 function saveUserScore(user) {
     var newScores = {
         name: user,
@@ -189,6 +199,7 @@ function saveUserScore(user) {
     localStorage.setItem("highscores", JSON.stringify(highScores));
 }
 
+// To retake the quiz and reset to defaults
 function refreshPage () {
     window.location.reload();
 }
@@ -204,5 +215,5 @@ saveBtn.addEventListener("click", function(event) {
     var user = initials.value;
     console.log(user, score);
     saveUserScore(user);
-})
+});
 resetBtn.addEventListener("click", refreshPage);
